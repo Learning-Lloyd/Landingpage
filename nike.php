@@ -1,0 +1,124 @@
+<?php
+
+$products = [
+    [
+        "name" => "Nike Air Max 270",
+        "price" => "$150",
+        "image" => "shoe.jpg"
+    ],
+    [
+        "name" => "Nike Air Force 1",
+        "price" => "$120",
+        "image" => "shoe2.jpg"
+    ],
+    [
+        "name" => "Nike Air Zoom Pegasus",
+        "price" => "$130",
+        "image" => "shoe3.jpg"
+    ]
+];
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Shoes Landing Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+        }
+        header {
+            background: black;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header img {
+            height: 40px;
+        }
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            background: url('blck.jpg') no-repeat center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 3em;
+        }
+        .products {
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 15px;
+            max-width: 250px;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.2s ease;
+        }
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike Logo">
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Step into the Future</h1>
+    <p>Explore the latest Nike shoes for ultimate comfort and performance.</p>
+</section>
+
+<section class="products">
+    <?php foreach($products as $product): ?>
+        <div class="product">
+            <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>">
+            <h3><?php echo $product['name']; ?></h3>
+            <p><?php echo $product['price']; ?></p>
+            <button style="background:black;color:white;padding:10px 20px;border:none;cursor:pointer;">Buy Now</button>
+        </div>
+    <?php endforeach; ?>
+</section>
+
+<footer>
+    &copy; <?php echo date("Y"); ?> Lloyd's Store. All Rights Reserved.
+</footer>
+
+</body>
+</html>
