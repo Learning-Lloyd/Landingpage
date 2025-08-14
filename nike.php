@@ -4,7 +4,7 @@ $products = [
     [
         "name" => "Nike Air Max 270",
         "price" => "$150",
-        "image" => "shoe.jpg"
+        "image" => "shoe4.jpg"
     ],
     [
         "name" => "Nike Air Force 1",
@@ -122,3 +122,4 @@ $products = [
 
 </body>
 </html>
+
